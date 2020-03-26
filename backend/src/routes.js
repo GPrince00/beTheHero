@@ -1,12 +1,13 @@
 const express = require('express');
+const crypto = require('crypto');
+const connection = require('./database/connection');
 
 const routes = express.Router();
 
-routes.post('/users', (req, res) => {
-    return res.json({
-        evento: 'Semana OmniStack 11.0',
-        aluno: 'Prince'
-    });
+routes.post('/ongs', (req, res) => {
+    
+    return res.json();
 });
+
 
 module.exports = routes;
