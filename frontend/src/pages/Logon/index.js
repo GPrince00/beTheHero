@@ -1,12 +1,14 @@
 import React from 'react';
 
+import { FiLogIn } from 'react-icons/fi'
+
 import './styles.css';
+
+import logoImg from '../../assets/logo.svg';
+import heroesImg from '../../assets/heroes.png';
 
 export default function Logon() {
     return (
-<<<<<<< HEAD
-        <h1>Hello World</h1>
-=======
         <div className="logon-container">
             <section className="form">
                 <img src={logoImg} alt="Be The Hero" />
@@ -25,6 +27,5 @@ export default function Logon() {
 
             <img src={heroesImg} alt="Heroes" />
         </div>
->>>>>>> parent of a0e3a84... feat(login): adds a styles on login page
     )
 }
