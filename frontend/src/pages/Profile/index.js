@@ -42,7 +42,7 @@ export default function Profile() {
                     <p>Caso teste</p>
 
                     <strong>DESCRIÇÃo</strong>
-                    <p>Descrição do este</p>
+                    <p>Descrição do este</p> 
 
                     <strong>VALOR</strong>
                     <p>R$ 120,00</p>
