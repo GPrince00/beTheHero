@@ -45,11 +45,3 @@
 .new-incident .content form input {
   margin-top: 8px;
 }
-
-.new-incident .content form .input-group {
-  display: flex;
-}
-
-.new-incident .content form .input-group input + input {
-  margin-left: 8px;
-}
