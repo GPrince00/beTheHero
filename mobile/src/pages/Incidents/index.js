@@ -7,7 +7,7 @@ import styles from './styles';
 
 export default function Incidents(){
     return (
-        <View style={styles.continer}>
+        <View style={styles.container}>
             <View style={styles.header}>
                 <Image source={logoImg} />
                 <Text style={styles.headerText}>
