@@ -35,11 +35,11 @@ export default function Detail(){
 
                 <View style={styles.actions}>
                     <TouchableOpacity style={styles.action} onPress={() => {}}>
-                        <Text style={styles.actionTex}>WhatsApp</Text>
+                        <Text style={styles.actionText}>WhatsApp</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity style={styles.action} onPress={() => {}}>
-                        <Text style={styles.actionTex}>Email</Text>
+                        <Text style={styles.actionText}>Email</Text>
                     </TouchableOpacity>
                 </View>
             </View>
