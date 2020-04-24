@@ -2,6 +2,7 @@ import React from 'react';
 import { Feather } from '@expo/vector-icons'
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { View, Image, Text, TouchableOpacity, Linking } from 'react-native';
+import * as MailComposer from 'expo-mail-composer';
 
 import logoImg from '../../assets/logo.png';
 
@@ -12,7 +13,7 @@ export default function Detail(){
     const route = useRoute();
 
     const incident = route.params.incident;
-    const message = 'Olá APAD, estou estrando em contato pois gostaria de ajudar no cado "Cadelinha Atropelada" com o valor de R$ 120,00';
+    const message = `Olá ${incident.name} estou entrando em contato pois gostaria de ajudar no caso "${incident.title}" com o valor de ${Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL'}).format(incident.value)}`;
     
     function navigateBack() {
         navigation.goBack();
@@ -20,14 +21,14 @@ export default function Detail(){
 
     function senMail() {
         MailComposer.composeAsync({
-            subject: 'Heroí do caso: Cadelinha Atropelada',
-            recipients: ['prince@prince.com'],
+            subject: `Heroí do caso: ${incident.title} `,
+            recipients: [incident.email],
             body: message,
         })
     }
 
     function sendWhatsapp() {
-        Linking.openURL(`whatsapp://send?phone=5511900000000&text=${message}`)
+        Linking.openURL(`whatsapp://send?phone=55${incident.whatsapp}&text=${message}`)
     }
     
     return (
