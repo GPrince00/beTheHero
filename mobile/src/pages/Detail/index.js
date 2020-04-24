@@ -1,6 +1,6 @@
 import React from 'react';
 import { Feather } from '@expo/vector-icons'
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import { View, Image, Text, TouchableOpacity, Linking } from 'react-native';
 
 import logoImg from '../../assets/logo.png';
@@ -9,6 +9,9 @@ import styles from './styles';
 
 export default function Detail(){
     const navigation = useNavigation();
+    const route = useRoute();
+
+    const incident = route.params.incident;
     const message = 'Olá APAD, estou estrando em contato pois gostaria de ajudar no cado "Cadelinha Atropelada" com o valor de R$ 120,00';
     
     function navigateBack() {
@@ -37,14 +40,19 @@ export default function Detail(){
                 </TouchableOpacity>                
             </View>
             <View style={styles.incident}>
-                <Text style={[styles.incidentProperty, { marginTop: 0 }]}>ONG:</Text>
-                <Text style={styles.incidentValue}>APAD</Text>
+            <Text style={[styles.incidentProperty, { marginTop: 0 }]}>ONG:</Text>
+                <Text style={styles.incidentValue}>{incident.name} de {incident.city}/{incident.uf}</Text>
 
                 <Text style={styles.incidentProperty}>CASO:</Text>
-                <Text style={styles.incidentValue}>Cachorro atropelad</Text>
+                <Text style={styles.incidentValue}>{incident.title}</Text>
 
                 <Text style={styles.incidentProperty}>VALOR:</Text>
-                <Text style={styles.incidentValue}>R$ 120,00</Text>
+                <Text style={styles.incidentValue}>
+                    {Intl.NumberFormat('pt-BR', { 
+                        style: 'currency', 
+                        currency: 'BRL'
+                        }).format(incident.value)}
+                </Text>
             </View>
 
             <View style={styles.contactBox}>
