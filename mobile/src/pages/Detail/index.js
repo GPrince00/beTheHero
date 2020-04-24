@@ -12,6 +12,10 @@ export default function Detail(){
     const navigation = useNavigation();
     const message = 'Olá APAD, estou estrando em contato pois gostaria de ajudar no cado "Cadelinha Atropelada" com o valor de R$ 120,00';
     
+    function navigateBack() {
+        navigation.goBack();
+    }
+
     function senMail() {
         MailComposer.composeAsync({
             subject: 'Heroí do caso: Cadelinha Atropelada',
