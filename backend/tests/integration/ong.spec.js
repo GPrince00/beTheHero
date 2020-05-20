@@ -26,4 +26,17 @@ describe('ONG', () => {
         expect(response.body).toHaveProperty('id');
         expect(response.body.id).toHaveLength(8);
     });
+
+    it('should be able to create a new incident', async () => {
+        const response = await request(app)
+            .post('/incidents')
+            .set('Authorization', '6e514fab')
+            .send({
+                title: "Cachorro Machucado",
+                description: "Quebrou a pata",
+                value: 300,
+            });
+
+        expect(response.body).toHaveProperty('id');
+    })   
 });
